@@ -21,6 +21,28 @@ Segue o link do Miro com os diagramas e documentação do sistema: [Link](https:
 
 A estrutura do projeto é organizada da seguinte maneira:
 
+```
+food-autoservice
+├── README.md
+├── alembic/
+├── alembic.ini
+├── poetry.lock
+├── pyproject.toml
+├── src
+│   ├── adapters/
+│   ├── domain/
+│   └── entrypoints/
+│   └── main.py
+│   └── settings.py
+└── tests
+```
+
+Dentro da pasta `src` temos as pastas `adapter`, `domain` e `entrypoint`. Vamos entender melhor o que é cada uma delas dado que estamos utilizando uma arquitetura hexagonal (ports and adapters):
+
+- `adapters/`: Aqui contém todo o código dos nossos `adapters`
+- `domain/`: Pasta com todas as lógicas de domínio, tanto as ports, que estão dentro da pasta `ports`, quanto os serviços que se encontram na pasta de cada domínio.
+- `entrypoints/`: Contém com todas as rotas e endpoints da API
+
 ## Instalação e uso (local)
 
 1. **Clone o repositório**:
@@ -68,6 +90,7 @@ A estrutura do projeto é organizada da seguinte maneira:
     ```
 
 6. **Configurar variáveis de ambiente:**
+
     Crie um arquivo `.env` na raíz do projeto e adicione as seguintes variáveis:
 
     ```env
