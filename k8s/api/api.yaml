@@ -37,3 +37,6 @@ spec:
           resources:
             requests:
               cpu: "250m"
+          envFrom:
+            - configMapRef:
+                name: food-autoservice-secret
